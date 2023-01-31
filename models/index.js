@@ -37,18 +37,17 @@ db.once('open', async () => {
 })
 
 // create a user a new user
-//var testUser = new User({
-    //username: "lieo@gmail.com",
-    //password: "Lieo1234",
-    //role: "patient",
-    //role_id: "63d03d13120621d12404bccd",
-  //  clinicianId: "63d03826120621d12404bcc5"
-//});
+var testUser = new User({
+    username: "john@gmail.com",
+    password: "john",
+    role: "clinician",
+    role_id: "63d03826120621d12404bcc5",
+});
 
 // save user to database
-//testUser.save(function (err) {
-  //  if (err) throw err;
-//})
+testUser.save(function (err) {
+  if (err) throw err;
+})
 require('./patient')
 require('./measurement')
 require('./message')
