@@ -40,16 +40,15 @@
   },
   "devDependencies": {
     "dotenv": "^16.0.0",
-    "interpolate-html-plugin": "^4.0.0",
     "prettier": "2.6.2"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/seantanys/Diabetes-Management-Web-Application.git"
+    "url": "git+https://github.com/Ye-Moe-Myint/dmpro.git"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/seantanys/Diabetes-Management-Web-Application/issues"
+    "url": "https://github.com/Ye-Moe-Myint/dmpro/issues"
   },
   "homepage": ".",
   "browserslist": {
