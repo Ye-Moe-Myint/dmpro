@@ -11,7 +11,7 @@ var { User } = require('./user')
 mongoose.connect(process.env.MONGO_URL || 'mongodb://127.0.0.1', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    dbName: 'CUT2DM'
+    dbName: 'dmpro'
 })
     .then(() => {
         console.log(`Connection success.`)
