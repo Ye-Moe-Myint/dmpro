@@ -1,0 +1,72 @@
+    <div class="page-heading" style="background-image: url('../images/header-img-3.jpg');">
+            <h1>About This Website</h1>          
+    </div>
+
+    <section class="about-website">
+
+        <p>CU Type 2 Diabetes Management(CUT2DM) is a startup where we plan to provide digital health solutions to targeted health requirements. Our flagship product is a web app that helps people manage their diabetes in the convenience of their own home, by recording data that can be monitored remotely by their clinician.</p>
+        <br>
+        <br>     
+        <div class="about-lottie">
+            <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+            {{!-- <lottie-player id="screenLottie" src="../images/lottie/mobile-app.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;" autoplay loop></lottie-player> --}}
+            <lottie-player id="screenLottie" src="../images/lottie/mobile-app.json" style="width: 300px; height: 300px;" loop></lottie-player>
+            <script>
+                LottieInteractivity.create({
+                    player: "#screenLottie",
+                    mode:"cursor",
+                    actions: [
+                        {
+                            position: { x: [0, 1], y: [0, 1] },
+                            type: "seek",
+                            frames: [1, 180]
+                        }
+                    ]
+                });
+            </script> 
+        </div>
+        <br>
+        <br>
+        <p>To continue using the features of our app, users will need to be logged in. Please create an account and contact your clinician for further information.</p>
+        <br>
+    </section>
+
+    <div class="filler-image" style="background-image: url('/images/laptop-mockup.png'); background-position: 25% 45%;">
+        <h2>
+            Never lose track of data with our app.       
+        </h2>
+    </div>
+
+    <section class="team-section">
+        <h2>Meet the team</h2>
+        <p>
+            We are a team of web developers aiming to provide users with the best experience.
+        </p>
+        <div class="team-container">
+            <div class="card">
+                <img src = "/images/ye.jpg">
+                <div class="card-text">
+                    <h3>Ye Moe Myint</h3>
+                    <p>Developer/Master Student</p>
+                    <p>yemoemyint497@gmail.com</p>
+                    <p>I am Ye. I love programming, video games, music and TWICE!!!</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src = "/images/lunchakorn.jpg">   
+                <div class="card-text">
+                    <h3>Dr. Lunchakorn Wuttisittikulkij</h3>
+                    <p>Professor/Advisor</p>
+                    <p>lunchakorn.w@chula.ac.th</p>
+                    <p>Ajarn loves soymilk, soccer, music.And the kindest professor I have ever met.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    {{!-- <div class="footer">
+        <a href="#" class="logo"><span style="color:black">D</span>@H</a>
+        <p>Powered by INFO30005</p>
+    </div> --}}

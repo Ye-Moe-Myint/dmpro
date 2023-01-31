@@ -1,0 +1,32 @@
+{{!-- handlebar for the table --}}
+
+<div class="patient-data-container">
+    <table id="patient-data-table">
+        <tr class="patient-data-header">
+            <th>Date</th>
+            <th>Time</th>
+            <th>{{#if (eqBcg type)}} blood glucose level {{else}} {{type}} {{/if}}{{unit}}</th>
+            <th>Comments</th>
+        </tr>
+       
+        {{#each measurement}}
+        <tr class="patient-data-row">
+            {{#if this.value}}
+                <td>{{formatDate this.date}}</td>
+                <td>{{formatTime this.date}} </td>
+                <td>{{this.value}}</td>
+                {{#if (isEmptyStr this.comment)}}
+                    <td> - </td>
+                {{else}}
+                    <td>{{this.comment}}</td>
+                {{/if}}
+            {{else}}
+                <td>{{formatDate this.date}}</td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+            {{/if}}
+        </tr>
+        {{/each}}
+    </table>
+</div>

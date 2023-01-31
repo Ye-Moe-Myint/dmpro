@@ -1,0 +1,65 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "<!-- Hey, thanks for using the awesome-readme-template template.   If you have any enhancements, then fork this project and create a pull request  or just open an issue with the label \"enhancement\".",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "build": "react-scripts build",
+    "prettier": "prettier --single-quote --no-semi --tab-width 4 --write **/*.js *.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1302.0",
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "connect-flash": "^0.1.1",
+    "express": "^4.18.2",
+    "express-flash": "^0.0.2",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "her": "^0.1.5",
+    "here": "^0.0.2",
+    "luxon": "^2.4.0",
+    "mock-aws-s3": "^4.0.2",
+    "moment": "^2.29.3",
+    "mongoose": "^6.8.4",
+    "nock": "^13.3.0",
+    "nodemon": "^2.0.20",
+    "passport": "^0.5.3",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.0.0",
+    "react-scripts": "4.0.3",
+    "socket.io": "^4.5.1"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "interpolate-html-plugin": "^4.0.0",
+    "prettier": "2.6.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seantanys/Diabetes-Management-Web-Application.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/seantanys/Diabetes-Management-Web-Application/issues"
+  },
+  "homepage": ".",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

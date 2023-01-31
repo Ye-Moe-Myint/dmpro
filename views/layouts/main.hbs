@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.svgrepo.com/show/55261/doctor.svg">
+    {{#if theme}}
+    {{#if (equals theme "default")}}
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    {{else}}
+     <link rel="stylesheet" type="text/css" href="/themes/{{theme}}.css" />
+    {{/if}}
+    {{else}}
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    {{/if}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../scripts/preventScroll.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    {{#if title}}
+    <title>{{title}}</title>
+    {{else}}
+    <title>CUT2DM</title>
+    {{/if}}
+</head>
+<body> 
+   <header id="header">
+        <nav class="navbar">
+            <a href="/" class="logo"><span style="color:black">CU</span>T2DM</a>
+            <ul class="nav-menu">
+                {{#if loggedIn}}
+                <li class="nav-item">
+                    <a href="/patient/dashboard" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/patient/data" class="nav-link">Your Data</a>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                {{/if}}
+                <li class="nav-item">  
+                    <div class="dropdown">
+                        <a href="#" class="nav-link">About</a>
+                        <div class="dropdown-content">
+                          <a href="/about/diabetes">Diabetes</a>
+                          <a href="/about/website">This website</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    {{#if loggedIn}}
+                    <form action="/logout" method="post">
+                        <button type="submit"> Logout </button>
+                    </form>
+                    {{else}}
+                    <form action="/login">
+                        <button type="submit"> Login </button>
+                    </form>
+                    {{/if}} 
+                </li>
+            </ul>
+            
+            <div id="menuToggle">
+
+                <input type="checkbox" id="menuToggleCheckbox"/>
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <ul id="menu">
+                    {{#if loggedIn}}
+                    <a href="/patient/dashboard"><li>Dashboard</li></a>
+                    <hr class="solid">
+                    {{/if}}
+                    {{#if loggedIn}}
+                    <a href="/patient/data"><li>Your Data</li></a>
+                    <hr class="solid">
+                    {{/if}}
+                    {{#if loggedIn}}
+                    <a href="/patient/record"><li>Record</li></a>
+                    <hr class="solid">
+                    {{/if}}
+                    <a href="/about/diabetes"><li>About Diabetes</li></a>
+                    <hr class="solid">
+                    <a href="/about/website"><li>About this Website</li></a>
+                    <hr class="solid">
+                    {{#if loggedIn}}
+                    <form action="/logout" method="post">
+                        <button>logout</button>
+                        {{!-- <a href="/logout"><li>Log Out</li></a> --}}
+                    </form>
+                    {{else}}
+                    <a href="/login"><li>Log In</li></a>
+                    {{/if}}
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main> 
+        {{{body}}} 
+    </main> 
+    <footer id="footer"> 
+        <a href="#" class="logo"><span style="color:black">CU</span>T2DM</a>
+        <p>Powered by CUEE</p>
+    </footer>
+</body>
+</html>

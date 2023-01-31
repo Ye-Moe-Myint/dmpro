@@ -1,0 +1,32 @@
+{
+  "name": "fis-repo-client",
+  "version": "0.1.14",
+  "description": "fis-repo-client",
+  "main": "fis-repo-client.js",
+  "dependencies": {
+    "ini": "1.0.0",
+    "request": "2.27.0",
+    "js-base64": "2.1.2",
+    "iconv-lite": "0.2.11",
+    "archiver": "0.4.9",
+    "adm-zip": "0.4.3",
+    "async": "0.2.9",
+	"ignore":"2.2.7",
+    "form-data": "~0.1.0",
+    "debug" : "0.8.0",
+    "q" : "1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test.bat"
+  },
+  "keywords": [
+    "fis",
+    "fis-repo",
+    "fis-repo-client"
+  ],
+  "author": {
+    "name": "fis-team"
+  },
+  "license": "BSD"
+}

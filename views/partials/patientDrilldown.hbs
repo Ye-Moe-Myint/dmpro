@@ -1,0 +1,56 @@
+{{!partial patient details at the top of each patient drilldown page}}
+<div class="drilldown-container flex-column-center">
+
+    <div class="patient-info"> 
+        <div class="patient-overview-details">
+            <img src = "/images/male-profile.jpg">
+            <ul>
+                <li>Name:   {{patient.first_name}} {{patient.last_name}}</li>
+                <li>Date of Birth:   {{formatDate patient.dob}}</li>
+                <li>Join Date:   {{formatDate join_date}}</li>
+                <li>Engagement Rate: {{patient.engagement_rate}}%</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="divider-white">
+
+    <div class="drilldown-nav-bar">
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="/clinician/manage-patient/{{{patient._id}}}" class="nav-link" id="overview-tab">Overview</a>
+            </li>
+            <li>
+                {{#if (isIn "bcg" required)}}
+                <a href="/clinician/manage-patient/{{{patient._id}}}/bcg" class="nav-link" id="bcg-tab">Blood Glucose</a>
+                {{/if}}
+            </li>
+            <li>
+                {{#if (isIn "weight" required)}}
+                <a href="/clinician/manage-patient/{{{patient._id}}}/weight" class="nav-link" id="weight-tab">Weight</a>
+                {{/if}}
+            </li>
+            <li>
+                {{#if (isIn "insulin" required)}}
+                <a href="/clinician/manage-patient/{{{patient._id}}}/insulin" class="nav-link" id="insulin-tab">Insulin</a>
+                {{/if}}
+            </li>
+            <li>
+                {{#if (isIn "exercise" required)}}
+                <a href="/clinician/manage-patient/{{{patient._id}}}/exercise" class="nav-link" id="exercise-tab">Exercise</a>
+                {{/if}}
+            </li>
+            
+            <li class="nav-item">      
+                <a href="/clinician/manage-patient/{{{patient._id}}}/manage" class="nav-link">Manage</a>
+            </li>
+
+            <li class="nav-item">      
+                <a href="/clinician/manage-patient/{{{patient._id}}}/message" class="nav-link">Message</a>
+            </li>
+
+        </ul>
+    </div>
+
+    <br>
+</div>
