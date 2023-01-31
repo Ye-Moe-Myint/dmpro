@@ -6,13 +6,18 @@ if (process.env.NODE_ENV !== 'production') {
 // setup Mongoose
 const mongoose = require('mongoose')
 var { User } = require('./user')
+
 // Connect to your mongo database using the MONGO_URL environment variable.
 // Locally, MONGO_URL will be loaded by dotenv from .env.
-mongoose.connect(process.env.MONGO_URL || 'mongodb://127.0.0.1', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    dbName: 'dmpro'
-})
+
+ const connection = "mongodb+srv://lieo:lieolieo@cluster0.pseugay.mongodb.net/dmprodb?retryWrites=true&w=majority";
+ mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true})
+
+//mongoose.connect(process.env.MONGO_URL || 'mongodb://127.0.0.1', {
+  //  useNewUrlParser: true,
+    //useUnifiedTopology: true,
+    //dbName: 'dmpro'
+//})
     .then(() => {
         console.log(`Connection success.`)
     })
