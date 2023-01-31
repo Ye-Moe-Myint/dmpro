@@ -9,10 +9,10 @@ Maybe you can mention me or this repo in the acknowledgements too
 <div align="center">
 
   <img src="public/images/logo-full.png" alt="logo" width="500" height="auto" />
-  <h1>Diabetes@Home Web Application</h1>
+  <h1>Diabetes Management Program/ Diabets Mellitus Protector (DMPro)</h1>
   
   <p>
-   We are Team h1. Our team comprises of Kian, Sanskar, Anh, Sean and Nic. Together we are creating web-based software for Diabetes@Home, a startup who plan to sell      digital health solutions.
+   We are Team Lunchakorn. Our team comprises of Ye, Prof.Lunch and etc. Together we are creating web-based software for DMPro, a startup who plan to provide digital health solutions.
 
    The first product we are designing is a web app which helps people to manage their diabetes in the conveniences of their own mobile device, tablet or PC.
 
@@ -20,11 +20,11 @@ Maybe you can mention me or this repo in the acknowledgements too
   </p>
    
 <h4>
-    <a href="https://github.com/seantanys/Diabetes-Management-Web-Application/">View Demo</a>
+    <a href="https://github.com/Ye-Moe-Myint/dmpro">View Demo</a>
   <span> · </span>
-    <a href="https://github.com/seantanys/Diabetes-Management-Web-Application/">Documentation</a>
+    <a href="https://github.com/Ye-Moe-Myint/dmpro">Documentation</a>
   <span> · </span>
-    <a href="https://github.com/seantanys/Diabetes-Management-Web-Application/">Report Bug</a>
+    <a href="https://github.com/Ye-Moe-Myint/dmpro">Report Bug</a>
   </h4>
 </div>
 
@@ -59,11 +59,11 @@ Maybe you can mention me or this repo in the acknowledgements too
 <!-- About the Project -->
 ## :star2: About the Project
 
-This is a web application developed for INFO30005 Web Information & Technology Semester 1 2022
+This is a web application developed for THESIS Semester 2 2022
 
 Scored 91.6% overall on this project. 
 
-Heroku Link: https://info30005-diabetes-at-home.herokuapp.com/
+Heroku Link: https://dmpro.herokuapp.com/
 
 <b>Note</b> This web app is only optimized for specific screen resolutions as per project specifications
 <br>
@@ -166,7 +166,7 @@ This project uses npm as package manager
 Clone the project
 
 ```bash
-  git clone https://github.com/seantanys/Diabetes-Management-Web-Application
+  git clone https://github.com/Ye-Moe-Myint/dmpro
 ```
 
 Go to the project directory
@@ -200,23 +200,18 @@ Start the server
 <!-- Code of Conduct -->
 ### :scroll: Code of Conduct
 
-Please read the [Code of Conduct](https://github.com/seantanys/Diabetes-Management-Web-Application)
+Please read the [Code of Conduct](https://github.com/Ye-Moe-Myint/dmpro)
 
 <!-- License -->
 ## :warning: License
 
-This web app is only for use for INFO30005 Web Information Technologies 2022 Semester 1 Project
+This web app is only for use for THESIS 2022 Semester 2 Examination
 
 
 <!-- Contact -->
 ## :handshake: Contact
 
-- Yi Sheon Tan - ystan@student.unimelb.edu.au
-- Kian Dsouza - kiand@student.unimelb.edu.au
-- Nic
-- Anh
-- Sanskar
+- Ye Moe Myint - yemoemyint4597@gmail.com
+- Lunchakorn Wuttisittikulkij  - Lunchakorn.W@chula.ac.th 
 
-Project Link: [https://github.com/seantanys/Diabetes-Management-Web-Application/](https://github.com/seantanys/Diabetes-Management-Web-Application)
-
-
+Project Link: [https://github.com/Ye-Moe-Myint/dmpro](https://github.com/Ye-Moe-Myint/dmpro)
