@@ -24,8 +24,21 @@ const getAboutWebsite = async (req, res) => {
 
 }
 
+// function which handles requests for  displaying About this Website page
+const getAboutExercise = async (req, res) => {
+    if (req.isAuthenticated()) {
+        const user = req.user
+        res.render('aboutExercise.hbs', {loggedIn: req.isAuthenticated(), theme: req.user.theme})
+    }
+    else {
+        res.render('aboutExercise.hbs', {loggedIn: req.isAuthenticated()})
+    }
+
+}
+
 // exports an object, which contain functions imported by router
 module.exports = {
     getAboutDiabetes,
-    getAboutWebsite,
+    getAboutExercise,
+    getAboutWebsite
 }
