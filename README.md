@@ -76,7 +76,7 @@ Clinician Side: Desktop (1920x1080) ONLY
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="public/images/readme/screenshot-homepage-1.jpg" alt="home-page" />
+  <img src="public/images/readme/homepage.jpg" alt="home-page" />
 </div>
 
 <div align="center"> 
