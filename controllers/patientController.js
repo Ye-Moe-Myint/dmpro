@@ -92,7 +92,7 @@ async function calcEngagementAll() {
 async function calcEngagementRate(patientData) {
     // Get patient ID
     const patientId = patientData._id;
-    // get current melbourne time using luxon
+    // get current bangkok time using luxon
     const currTime = DateTime.now().setZone('Asia/Bangkok');
     // get the beginning of the current day
     const currDate = currTime.startOf('day').toISO();
