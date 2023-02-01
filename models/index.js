@@ -45,9 +45,9 @@ db.once('open', async () => {
 //});
 
 // save user to database
-testUser.save(function (err) {
-  if (err) throw err;
-})
+//testUser.save(function (err) {
+  //if (err) throw err;
+//})
 require('./patient')
 require('./measurement')
 require('./message')
