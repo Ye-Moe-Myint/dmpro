@@ -189,7 +189,7 @@ const getPatientPage = async (req, res) => {
         const clinician = await Clinician.findById(data.clinicianId).lean();
 
         // get the patients required measurements.
-        const reqMeasurements = Object.keys(data["measurements"])
+        const reqMeasurements = Object.keys(data["measurements"]);
         // get the measurments that have already been recorded for today
         const alreadyMeasured = getMeasurementTypes(todayData);
         // get the measurements that havent been recorded today
