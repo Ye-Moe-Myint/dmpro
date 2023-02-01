@@ -183,7 +183,7 @@ const getPatientPage = async (req, res) => {
         const currDate = currTime.startOf('day').toISO();
         // get the patient's data
         //const data = await Patient.findById(user.role_id).lean();
-        const data = await Patient.findById("63d03d13120621d12404bccd").lean();
+        const data = await Patient.findById(user.role_id).lean();
         // get the patient's recorded data today
         const todayData = await Measurement.find({patientId: user.role_id, date: { $gte: currDate}}).lean();
         const clinician = await Clinician.findById(data.clinicianId).lean();
