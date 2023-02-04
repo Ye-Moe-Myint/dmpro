@@ -5,26 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
-    {{!-- <link rel="stylesheet" type="text/css" href="/themes/green.css" /> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../scripts/preventScroll.js"></script>
     <title>DMPro</title>
 </head>
 <body> 
    <header id="header">
         <nav class="navbar">
-            <a href="/" class="logo"><span style="color:black">DMPro</span></a>
-            {{!-- <a href="#" class="nav-name">Dr.Chris</a> --}}
+            <a href="/" class="logo"><span style="color:black">DM</span>Pro</a>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="/clinician/dashboard" class="nav-link">Dashboard</a>
+                    <a href="/" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">      
                     <div class="dropdown">
-                        <a href="#" class="nav-link">Messages</a>
+                        <a href="#" class="nav-link">About</a>
+                        <div class="dropdown-content">
+                          <a href="/about/diabetes">Diabetes</a>
+                          <a href="/about/exercise">Exercise</a>
+                          <a href="/about/food">Food</a>
+                          <a href="/about/website">Website</a>
+                        </div>
+                      </div>
                 </li>
                 <li class="nav-item">
-                    <form action="/">
-                        <button type="submit"> Logout </button>
+                    <form action="/login">
+                        <button type="submit"> Login </button>
                     </form>
                 </li>
             </ul>
@@ -37,17 +43,17 @@
                 <span></span>
                 
                 <ul id="menu">
-                  <a href="/clinician/dashboard"><li>Dashboard</li></a>
+                  <a href="/"><li>Home</li></a>
                   <hr class="solid">
                   <a href="/about/diabetes"><li>About Diabetes</li></a>
                   <hr class="solid">
-                  <a href="/about/Food"><li>About Food</li></a>
+                  <a href="/about/exercise"><li>About Exercise</li></a>
                   <hr class="solid">
-                  <a href="/about/diabetes"><li>About Exercise</li></a>
+                  <a href="/about/food"><li>About Food</li></a>
                   <hr class="solid">
                   <a href="/about/website"><li>About this Website</li></a>
                   <hr class="solid">
-                  <a href="/"><li>Logout</li></a>
+                  <a href="/login"><li>Login</li></a>
                 </ul>
             </div>
         </nav>
@@ -56,7 +62,7 @@
         {{{body}}} 
     </main> 
     <footer id="footer"> 
-        <a href="#" class="logo"><span style="color:black">DMPro</span></a>
+        <a href="#" class="logo"><span style="color:black">DM</span>Pro</a>
         <p>Powered by CU Telecom Lab</p>
     </footer>
 </body>

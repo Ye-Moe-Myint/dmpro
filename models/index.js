@@ -14,7 +14,7 @@ var { User } = require('./user')
  mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true})
 
 //mongoose.connect(process.env.MONGO_URL || 'mongodb://127.0.0.1', {
-  //  useNewUrlParser: true,
+   // useNewUrlParser: true,
     //useUnifiedTopology: true,
     //dbName: 'dmpro'
 //})

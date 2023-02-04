@@ -125,6 +125,10 @@ app.post('/logout', (req, res) => {
     res.redirect('/');
 })
 
+const registerRouter = require('./routes/registerRouter')
+
+app.use('/register', registerRouter)
+
 const aboutRouter = require('./routes/aboutRouter')
 
 app.use('/about', aboutRouter)
