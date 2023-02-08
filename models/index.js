@@ -12,7 +12,7 @@ var { User } = require('./user')
 
  const connection = "mongodb+srv://lieo:lieolieo@cluster0.pseugay.mongodb.net/dmprodb?retryWrites=true&w=majority";
  mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true})
-
+ //mongodb+srv://lieo:<password>@cluster0.pseugay.mongodb.net/?retryWrites=true&w=majority
 //mongoose.connect(process.env.MONGO_URL || 'mongodb://127.0.0.1', {
    // useNewUrlParser: true,
     //useUnifiedTopology: true,

@@ -7,9 +7,17 @@ const session = require('express-session')
 const passport = require('./passport.js')
 const { DateTime } = require("luxon");
 const { body, validationResult } = require('express-validator')
+const multer = require('multer');
+const path = require("path");
 require('./models')
-
+var bodyParser = require('body-parser');
 const app = express()
+const mongoose = require('mongoose')
+const {Patient} = require('./models/patient')
+const db = mongoose.connection.on('error', err => {
+    console.error(err);
+    process.exit(1)
+})
 // configure Handlebars
 app.engine(
     'hbs',
@@ -125,6 +133,115 @@ app.post('/logout', (req, res) => {
     res.redirect('/');
 })
 
+const storage = multer.diskStorage({
+
+    destination: function (req, file, cb) {
+  
+      cb(null, 'uploads')
+  
+    },
+  
+    filename: async function (req, file, cb) {
+     // cb(null, file.fieldname + '-' + Date.now())
+     const user = req.user;
+     // get the patient's data
+     const data = await Patient.findById(user.role_id).lean();
+     const patient = data.screen_name;
+     const currTime = DateTime.now().setZone('Asia/Bangkok');
+     const currDate = currTime.startOf('day').toISO();
+      cb(null, patient + '-' + currDate)
+      var url = currDate + '-' + patient
+      var imgname = url.substring(url.lastIndexOf('-')+1);
+      console.log('name:'+imgname)
+  
+    }
+  
+  });
+  
+  const upload = multer({ storage: storage });
+  const fs = require('file-system');
+
+  app.get('/photoupload', (req, res) => {
+
+    if (req.isAuthenticated()) {
+        user = req.user;
+        if (req.user.role === "patient") {
+            res.render('food.hbs', {loggedIn: req.isAuthenticated(), theme: user.theme})
+        }
+
+    }
+    else {
+        res.render('patientDashboard.hbs', {loggedIn: req.isAuthenticated()})
+    }
+
+})
+
+app.post('/uploadphoto', upload.single('myImage'), (req, res) => {
+
+    var img = fs.readFileSync(req.file.path);
+    console.log(img)
+
+    var encode_image = img.toString('base64');
+
+    // Define a JSONobject for the image attributes for saving to database
+
+    var finalImg = {
+
+        contentType: req.file.mimetype,
+
+        image: Buffer.from(encode_image, 'base64')
+
+    };
+
+     db.collection('images').insertOne(finalImg, (err, result) => {
+
+        console.log(result)
+
+        if (err) return console.log(err)
+
+        console.log('saved to database')
+        req.flash('success', `Successfully uploaded the photo.`)
+
+        res.redirect('/patient/dashboard')
+
+    })
+
+})
+
+app.get('/photos', (req, res) => {
+
+    db.collection('images').find().toArray((err, result) => {
+
+        const imgArray = result.map(element => element._id);
+
+        if (err) return console.log(err)
+
+        res.send(imgArray)
+
+    })
+
+});
+
+const ObjectId = require('mongodb').ObjectId;
+
+app.get('/photo/:id', (req, res) => {
+
+    var filename = req.params.id;
+    console.log(filename)
+
+    db.collection('images').findOne({ '_id': ObjectId(filename) }, (err, result) => {
+
+        if (err) return console.log(err)
+
+        res.contentType('image/jpeg');
+
+        res.send(result.image.buffer)
+
+    })
+
+})
+
+//add register router
 const registerRouter = require('./routes/registerRouter')
 
 app.use('/register', registerRouter)
@@ -141,6 +258,23 @@ const patientRouter = require('./routes/patientRouter')
 
 app.use('/patient', patientRouter)
 
+app.get('/', (req, res) => {
+
+    if (req.isAuthenticated()) {
+        user = req.user;
+        if (req.user.role === "patient") {
+            res.render('index.hbs', {loggedIn: req.isAuthenticated(), theme: user.theme})
+        }
+        else {
+            res.render('index.hbs', {loggedIn: req.isAuthenticated(), layout: "clinician"})
+        }
+
+    }
+    else {
+        res.render('index.hbs', {loggedIn: req.isAuthenticated()})
+    }
+
+})
 app.get('*', (req, res) => {
     if (req.isAuthenticated()) {
         user = req.user;

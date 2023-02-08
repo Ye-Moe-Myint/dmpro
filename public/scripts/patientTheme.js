@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const default_btn = document.getElementById("default-theme");
     const dark_btn = document.getElementById("dark-theme");
     const spring_btn = document.getElementById("spring-theme");
+    const chula_btn = document.getElementById("chula-theme");
     const autumn_btn = document.getElementById("matrix-theme");
     const theme_text = document.getElementById("selected-theme");
 
@@ -32,6 +33,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
         else if (selected === 'spring') {
             theme_text.innerText = "spring";
+        }
+        else if (selected === 'chula') {
+            theme_text.innerText = "chula";
         }
     }
   });

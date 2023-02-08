@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <style>form {
+  text-align: center;
+  }
+  h1{
+  text-align: center;
+}
+label{color:black;}
+input{position: relative;}
+</style>
+
+  <meta charset="UTF-8">
+
+  <title>DMPro</title>
+
+</head>
+
+<body>
+  <script src="../scripts/closeFlash.js"></script>
+
+{{> flashSuccess}}
+{{> flashError}}
+  <br><br><br><br>
+  <!-- PHOTO-->
+  <h1>Please upload the photos of all the meal you had till now</h1>
+  <br><br><br><br>
+<form action="/uploadphoto" enctype="multipart/form-data" method="POST"> 
+
+  <input type="file" title="good" name="myImage" accept="image/*"/>
+
+  <input type="submit" value="Upload Photo"/>
+
+</form>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

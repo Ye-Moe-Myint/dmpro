@@ -8,6 +8,7 @@ const patientRouter = express.Router()
 // import people controller functions
 const patientController = require('../controllers/patientController')
 const clinicianController = require('../controllers/clinicianController')
+// route to handle the GET request for redirecting to foodupload page
 
 // route to handle the GET request for redirecting to patient dashboard
 patientRouter.get('/', patientController.redirectToDashboard)

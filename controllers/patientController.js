@@ -7,6 +7,8 @@ const e = require('connect-flash');
 const { redirect } = require('express/lib/response');
 const { body, validationResult } = require('express-validator');
 const { Clinician } = require('../models/clinician');
+var fs = require('fs');
+var path = require('path');
 
 // const { isAuthenticated } = require('../app.js');
 
@@ -319,6 +321,8 @@ const changeTheme = async (req, res) => {
     }
 }
 
+
+
 const getPatientDataPage = async (req, res) => {
     if (req.isAuthenticated()) {
         const user = req.user;
@@ -361,6 +365,71 @@ function groupMeasurementsByDate(measurements) {
 
     return groupedData;
 }
+//var imgModel = require('../models');
+
+// const getFood= async (req, res, next) => {
+//     if (req.isAuthenticated()) {
+//         try {
+
+//             return res.render('food', {layout: 'patient-logged-out.hbs', errorFlash: req.flash('error'), loggedIn: req.isAuthenticated()})
+//         } catch (err) {
+//             return next(err)
+//         }
+//     }
+//     else {
+//         res.render('/patient/dashboard');
+//     }
+// }
+
+// const submitFood= async (req, res, next) => {
+//     if (req.isAuthenticated()) {
+//         try {
+//             var multer = require('multer');
+ 
+//             var storage = multer.diskStorage({
+//                 destination: (req, file, cb) => {
+//                     cb(null, 'uploads')
+//                 },
+//                 filename: (req, file, cb) => {
+//                     cb(null, file.fieldname + '-' + Date.now())
+//                 }
+//             })
+//             var upload = multer({ storage: storage });
+//             var obj = {
+//                 name: req.body.name,
+//                 desc: req.body.desc,
+//                 img: {
+//                     data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
+//                     contentType: 'image/png'
+//                 }
+//             }
+//             imgModel.create(obj, (err, item) => {
+//                 if (err) {
+//                     console.log(err);
+//                 }
+//                 else {
+//                     // item.save();
+//                     res.redirect('/patinet/dashboard');
+//                 }
+//             });
+//         } catch (err) {
+//             return next(err)
+//         }
+//     }
+//     else {
+//         res.render('login');
+//     }
+// }
+const getFood = async (req, res) => {
+    if (req.isAuthenticated()) {
+        const user = req.user
+        res.render('food.hbs', {loggedIn: req.isAuthenticated(), theme: req.user.theme})
+    }
+    else {
+        res.render('food.hbs', {loggedIn: req.isAuthenticated()})
+    }
+
+}
 
 // exports an object, which contain functions imported by router
 module.exports = {
@@ -372,4 +441,5 @@ module.exports = {
     changePassword,
     changeTheme,
     getPatientDataPage,
+    getFood
 }
