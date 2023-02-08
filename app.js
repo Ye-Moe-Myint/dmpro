@@ -141,24 +141,6 @@ const patientRouter = require('./routes/patientRouter')
 
 app.use('/patient', patientRouter)
 
-app.get('/', (req, res) => {
-
-    if (req.isAuthenticated()) {
-        user = req.user;
-        if (req.user.role === "patient") {
-            res.render('index.hbs', {loggedIn: req.isAuthenticated(), theme: user.theme})
-        }
-        else {
-            res.render('index.hbs', {loggedIn: req.isAuthenticated(), layout: "clinician"})
-        }
-
-    }
-    else {
-        res.render('index.hbs', {loggedIn: req.isAuthenticated()})
-    }
-
-})
-
 app.get('*', (req, res) => {
     if (req.isAuthenticated()) {
         user = req.user;
